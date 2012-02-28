@@ -19,4 +19,13 @@ module Sunrise
       end
     end
   end
+
+end
+#Bag with each on string
+unless "".respond_to?(:each)
+  String.class_eval do
+    def each &block
+      self.lines &block
+    end
+  end
 end
